@@ -10,7 +10,7 @@
   header('Content-Type: application/json');
 
   $api = new Github\Api;
-  $token = new Milo\Github\OAuth\Token('14d80fa62809e44bbfa8a371bf058d58269ae869');
+  $token = new Milo\Github\OAuth\Token('b4f6e0fc03a350dc353d3298faf71b4357f2f5ac');
   $api->setToken($token);
 
   $objPHPExcel = new PHPExcel();
@@ -35,6 +35,7 @@
     //$output = "<table><thead><tr><td>Name</td><td>Public email</td><td>URL</td><td>Company</td><td>Location</td><td>Primary Github email</td><td>Additional email addresses</td><td>Repositories</td><td>Organization</td></tr></thead><tbody>";
     foreach($repositorySearchData as $data) {
       $url =  $data->stargazers_url;
+      $repo_name = $data->full_name;
       $p=parse_url($url);
       $stargazers_url = $p['path'];
       $user_url = $api->get($stargazers_url);
@@ -51,7 +52,7 @@
         $objPHPExcel->getActiveSheet()
           ->SetCellValue('B' . $rowCount, $userinfos->email);
         $objPHPExcel->getActiveSheet()
-          ->SetCellValue('C' . $rowCount, $userinfos->url);
+          ->SetCellValue('C' . $rowCount, $userinfos->html_url);
         $objPHPExcel->getActiveSheet()
           ->SetCellValue('D' . $rowCount, $userinfos->company);
         $objPHPExcel->getActiveSheet()
@@ -59,7 +60,7 @@
         $objPHPExcel->getActiveSheet()
           ->SetCellValue('F' . $rowCount, $userinfos->email);
         $objPHPExcel->getActiveSheet()
-          ->SetCellValue('G' . $rowCount, $userinfos->repos_url);
+          ->SetCellValue('G' . $rowCount, $repo_name);
         $objPHPExcel->getActiveSheet()
           ->SetCellValue('H' . $rowCount, $userinfos->organizations_url);
 
@@ -76,8 +77,9 @@
          $rowCount++;
       }
     }
-    header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-    header("Content-Disposition: attachment; filename=\"results.xlsx\"");
+    $filename = date('Ymdhis')."githubrepo";
+    header("Content-Type: application/vnd.ms-excel");
+    header('Content-Disposition: attachment;filename="'.$filename.'.csv"');
     header("Cache-Control: max-age=0");
     $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
     $objWriter->save("php://output");

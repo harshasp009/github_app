@@ -1,0 +1,157 @@
+@viewport {
+    width: auto;
+    user-zoom: zoom;
+    min-zoom: 1.0;
+}
+html {
+    margin: 0;
+    padding: 0;
+}
+
+.form-style-6{
+    font: 95% Arial, Helvetica, sans-serif;
+    max-width: 400px;
+    margin: 10px auto;
+    padding: 16px;
+    background: #F7F7F7;
+}
+/*.form-style-6 h1{*/
+/*background: #000000;*/
+/*padding: 20px 0;*/
+/*font-size: 140%;*/
+/*font-weight: 300;*/
+/*text-align: center;*/
+/*color: #fff;*/
+/*margin: -16px -16px 16px -16px;*/
+/*}*/
+.form-style-6 input[type="text"],
+.form-style-6 input[type="date"],
+.form-style-6 input[type="datetime"],
+.form-style-6 input[type="email"],
+.form-style-6 input[type="number"],
+.form-style-6 input[type="search"],
+.form-style-6 input[type="time"],
+.form-style-6 input[type="url"],
+.form-style-6 textarea,
+.form-style-6 select
+{
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    background: #fff;
+    margin-bottom: 4%;
+    border: 1px solid #ccc;
+    padding: 3%;
+    color: #555;
+    font: 95% Arial, Helvetica, sans-serif;
+}
+.form-style-6 input[type="text"]:focus,
+.form-style-6 input[type="date"]:focus,
+.form-style-6 input[type="datetime"]:focus,
+.form-style-6 input[type="email"]:focus,
+.form-style-6 input[type="number"]:focus,
+.form-style-6 input[type="search"]:focus,
+.form-style-6 input[type="time"]:focus,
+.form-style-6 input[type="url"]:focus,
+.form-style-6 textarea:focus,
+.form-style-6 select:focus
+{
+    box-shadow: 0 0 5px #00a1df;
+    padding: 3%;
+    border: 1px solid #00a1df;
+}
+
+.form-style-6 input[type="submit"],
+.form-style-6 input[type="button"]{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 160px;
+    padding: 3%;
+    background: none;
+    border: 1px solid #00a1df;
+    color: #00a1df;
+    font-size: 14px;
+    font-weight: 300;
+    margin-left: 105px;
+}
+.form-style-6 input[type="submit"]:hover,
+.form-style-6 input[type="button"]:hover{
+    background: #00a1df;
+    color : #ffffff;
+}
+.custom-file-input {
+    margin: 20px 2px;
+}
+.custom-label {
+    width: 100%;
+    /*padding: 0 65px 0 0px;*/
+    color: #797171;;
+}
+.thankyou p {
+    text-align: center;
+    padding: 45px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+.thankyou {
+    border: 1px solid #ccc;
+}
+.header_img {
+    width: 120px;
+    float: left;
+    padding-right: 80px;
+    padding-left: 16px;
+    padding-top: 3px;
+
+}
+.header {
+    background: #000000;
+    padding: 15px 0;
+    margin: -16px -16px 16px -16px;
+}
+.header h1 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 300;
+}
+a.url_cls {
+    text-align: center;
+}
+.file_err,.mail_err {
+    color: #F44843;
+    font-size: 10px;
+    font-weight: 200;
+    display: block;
+
+}
+.confirm_page a {
+    width: 160px;
+    padding: 3%;
+    background: none;
+    border: 1px solid #00a1df;
+    color: #00a1df;
+    font-size: 14px;
+    font-weight: 300;
+    margin-left: 105px;
+    text-decoration: none;
+    line-height: 30px;
+}
+.tomail {
+    margin-top: 10px;
+}
+.confirm_page p {
+    text-align: justify;
+    line-height: 25px;
+    color: #4A3D3D;
+}
+.confirm_page a:hover {
+    background: #00a1df;
+    color : #ffffff;
+}
